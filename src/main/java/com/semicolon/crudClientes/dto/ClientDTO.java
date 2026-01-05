@@ -1,5 +1,7 @@
 package com.semicolon.crudClientes.dto;
 
+import com.semicolon.crudClientes.entities.Client;
+
 import java.time.LocalDate;
 
 public class ClientDTO {
@@ -10,7 +12,7 @@ public class ClientDTO {
     private LocalDate birthDate;
     private Integer children;
 
-    public ClientDTO(){}
+    public ClientDTO(Client client){}
 
     public ClientDTO(Long id, String name, String cpf, Double income,
                   LocalDate birthDate, Integer children){

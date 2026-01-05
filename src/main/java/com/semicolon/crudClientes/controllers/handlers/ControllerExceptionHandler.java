@@ -1,6 +1,7 @@
 package com.semicolon.crudClientes.controllers.handlers;
 
 import com.semicolon.crudClientes.dto.CustomError;
+import com.semicolon.crudClientes.services.exceptions.DatabaseException;
 import com.semicolon.crudClientes.services.exceptions.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
@@ -20,5 +21,10 @@ public class ControllerExceptionHandler {
         return ResponseEntity.status(status).body(error);
     }
 
-    public ResponseEntity<CustomError> database(DatabaseException e )
+    public ResponseEntity<CustomError> database(DatabaseException e,HttpServletRequest request){
+        HttpStatus status = HttpStatus.BAD_REQUEST;
+        CustomError error = new CustomError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI());
+
+        return ResponseEntity.status(status).body(error);
+    }
 }
