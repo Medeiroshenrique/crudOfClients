@@ -12,7 +12,15 @@ public class ClientDTO {
     private LocalDate birthDate;
     private Integer children;
 
-    public ClientDTO(Client client){}
+    public ClientDTO(){}
+    public ClientDTO(Client entity){
+        this.id = entity.getId();;
+        this.name = entity.getName();
+        this.cpf = entity.getCpf();
+        this.income = entity.getIncome();;
+        this.birthDate = entity.getBirthDate();
+        this.children = entity.getChildren();
+    }
 
     public ClientDTO(Long id, String name, String cpf, Double income,
                   LocalDate birthDate, Integer children){
