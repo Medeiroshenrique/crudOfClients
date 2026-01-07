@@ -7,9 +7,11 @@ import com.semicolon.crudClientes.services.exceptions.DatabaseException;
 import com.semicolon.crudClientes.services.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
@@ -65,4 +67,15 @@ public class ClientService {
         }
     }
 
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public void delete(Long id){
+        if(!repository.existsById(id)){
+            throw new ResourceNotFoundException("This resource was not found.");
+        }
+        try{
+            repository.deleteById(id);
+        }catch (DataIntegrityViolationException e){
+            throw new DatabaseException("Failure of referential integrity.");
+        }
+    }
 }
