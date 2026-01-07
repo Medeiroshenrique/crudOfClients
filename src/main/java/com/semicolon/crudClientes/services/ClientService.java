@@ -56,6 +56,9 @@ public class ClientService {
 
     @Transactional
     public ClientDTO update(Long id, ClientDTO dto){
+        if(!repository.existsById(id)){
+            throw new ResourceNotFoundException("There was not any client with the ID informed.");
+        }
         try{
         Client entity = repository.getReferenceById(id);
         copyToEntity(dto, entity);
