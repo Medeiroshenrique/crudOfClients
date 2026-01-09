@@ -46,3 +46,17 @@ To facilitate development, the application features an **automated data seeding*
 | **POST** | `/clients` | Create a new client |
 | **PUT** | `/clients/{id}` | Update an existing client |
 | **DELETE** | `/clients/{id}` | Remove a client |
+
+
+##  Testing the API
+
+To verify the endpoints and validation rules, you can use **Postman** or **Insomnia**. This allows you to test the JSON payloads, check the HTTP status codes (like `201 Created` or `400 Bad Request`), and see the automated data seeding in action.
+
+<p align="center">
+  <img src="readme_pictures/Postman-screenshot.png" alt="Client CRUD Preview" width="550">
+</p>
+
+### Quick Test Steps:
+1. Ensure the application is running (`localhost:8080`).
+2. Import your collection or create a new request.
+3. Try sending a `POST` to `/clients` with a negative number of children to see the validation in action! 
