@@ -7,7 +7,7 @@ Applying knowledge of Validations, Layered Structure, Data Transfer objects and 
 This application is a **Spring Boot REST API** designed for robust Client Management, serving as a backend service that bridges a relational database with external consumers. It utilizes **Data Transfer Objects (DTOs)** to decouple the internal database schema from the external API layer, ensuring that sensitive data is protected and communication remains efficient. By implementing the **Service Layer pattern**, the application maintains a clean separation of concerns, where business logic is isolated from the web controller and data access repository.
 
 <p align="center">
-  <img src="readme_pictures/image.png" alt="Client CRUD Preview" width="550">
+  <img src="readme_pictures/image.png" alt="Client CRUD Preview" width="400">
 </p>
 
 ### Core Features & Validation
