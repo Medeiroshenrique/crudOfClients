@@ -28,9 +28,13 @@ To facilitate development, the application features an **automated data seeding*
     ```bash
     git clone https://github.com/Medeiroshenrique/crudOfClients.git
     ```
-2.  **Run the application**:
+    or, if you are using SSH
+    ```bash
+    git@github.com:Medeiroshenrique/crudOfClients.git
+    ```
+3.  **Run the application**:
     Use your IDE or run `./mvnw spring-boot:run` in the terminal.
-3.  **Access the Database**:
+4.  **Access the Database**:
     Navigate to `http://localhost:8080/h2-console`
     * **JDBC URL**: `jdbc:h2:mem:testdb`
     * **User**: `sa`
