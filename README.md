@@ -16,14 +16,14 @@ To facilitate development, the application features an **automated data seeding*
 
 ---
 
-## 🛠️ Tech Stack
+## ☕ Tech Stack
 * **Java 21**
 * **Spring Boot**
 * **Spring Data JPA**
 * **Bean Validation (Hibernate Validator)**
 * **H2 Database** (In-memory)
 
-## 🚀 How to Run
+## How to Run
 1.  **Clone the repository**:
     ```bash
     git clone [https://github.com/your-username/crud-clientes.git](https://github.com/your-username/crud-clientes.git)
@@ -36,7 +36,7 @@ To facilitate development, the application features an **automated data seeding*
     * **User**: `sa`
     * **Password**: (empty)
 
-## 📡 API Endpoints
+## 🌐 API Endpoints
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
 | **GET** | `/clients` | List all clients (Paged) |
