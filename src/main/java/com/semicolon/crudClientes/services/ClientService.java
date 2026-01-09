@@ -13,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import java.util.Optional;
 
@@ -23,6 +24,10 @@ public class ClientService {
 
     @Transactional(readOnly = true)
     public ClientDTO findById(Long id){
+        if(!repository.existsById(id)){
+            throw new ResourceNotFoundException("There was not any client with the ID informed.");
+        }
+
         Optional<Client> result = repository.findById(id);
         Client client = result.orElseThrow(()-> new ResourceNotFoundException("This client was not found!"));
 
@@ -78,7 +83,7 @@ public class ClientService {
         try{
             repository.deleteById(id);
         }catch (DataIntegrityViolationException e){
-            throw new DatabaseException("Failure of referential integrity.");
+            throw new DatabaseException("Referential integrity failure.");
         }
     }
 }

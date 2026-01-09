@@ -1,15 +1,23 @@
 package com.semicolon.crudClientes.dto;
 
 import com.semicolon.crudClientes.entities.Client;
+import jakarta.validation.constraints.*;
 
 import java.time.LocalDate;
 
 public class ClientDTO {
     private Long id;
+    @Size(min=3, max = 80, message = "The name must have between 3 and 80 characters.")
+    @NotBlank(message = "The field 'name' must not be blank.")
     private String name;
+    @NotBlank(message = "The field 'cpf' must not be blank.")
     private String cpf;
+    @NotNull(message = "The field 'income' is required.")
     private Double income;
+    @PastOrPresent(message = "The birthdate must be in the present or past.")
     private LocalDate birthDate;
+    @NotNull(message = "The field 'children' must not be blank.")
+    @PositiveOrZero(message = "Number of children cannot be negative")
     private Integer children;
 
     public ClientDTO(){}
