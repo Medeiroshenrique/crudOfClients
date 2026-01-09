@@ -28,7 +28,7 @@ To facilitate development, the application features an **automated data seeding*
 ## How to Run
 1.  **Clone the repository**:
     ```bash
-    git clone [https://github.com/your-username/crud-clientes.git](https://github.com/your-username/crud-clientes.git)
+    git clone https://github.com/Medeiroshenrique/crudOfClients.git
     ```
 2.  **Run the application**:
     Use your IDE or run `./mvnw spring-boot:run` in the terminal.
